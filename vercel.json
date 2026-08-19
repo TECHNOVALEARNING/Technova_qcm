@@ -3,19 +3,19 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist/public",
   "framework": "vite",
+  "functions": {
+    "api-dist/index.js": {
+      "runtime": "@vercel/node@3"
+    }
+  },
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/api"
+      "destination": "/api-dist/index.js"
     },
     {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
-  ],
-  "functions": {
-    "api/index.ts": {
-      "includeFiles": "server/**/*.ts,shared/**/*.ts,drizzle/**/*.ts,client/src/data/questions.json"
-    }
-  }
+  ]
 }
