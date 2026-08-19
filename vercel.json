@@ -12,5 +12,10 @@
       "source": "/(.*)",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "functions": {
+    "api/**/*.ts": {
+      "includeFiles": "client/src/data/questions.json"
+    }
+  }
 }
