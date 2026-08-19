@@ -21,6 +21,7 @@ import {
   Home as HomeIcon,
   Lightbulb,
   LogIn,
+  LogOut,
   Medal,
   PartyPopper,
   Play,
@@ -327,11 +328,11 @@ export default function PlayPage() {
           </button>
           {isAuthenticated ? (
             <>
-              <a className="account-link" href="#progression"><Award size={15} aria-hidden="true" /> {earnedBadges.length} badge{earnedBadges.length > 1 ? "s" : ""}</a>
-              <button type="button" className="account-link" onClick={() => { setLocation("/"); logout(); }} style={{ marginLeft: '1rem', opacity: 0.8 }}>Déconnexion</button>
+              <a className="account-link" href="#progression"><Award size={15} aria-hidden="true" /> <span>{earnedBadges.length}</span><span className="hide-on-mobile" style={{ marginLeft: '0.2rem' }}>badge{earnedBadges.length > 1 ? "s" : ""}</span></a>
+              <button type="button" className="account-link" onClick={() => { setLocation("/"); logout(); }} style={{ marginLeft: '0.5rem', opacity: 0.8 }}><LogOut size={15} aria-hidden="true" /> <span className="hide-on-mobile">Déconnexion</span></button>
             </>
           ) : (
-            <button type="button" className="account-link" onClick={() => setLocation("/auth")}><LogIn size={15} aria-hidden="true" /> Se connecter</button>
+            <button type="button" className="account-link" onClick={() => setLocation("/auth")}><LogIn size={15} aria-hidden="true" /> <span className="hide-on-mobile">Se connecter</span></button>
           )}
         </div>
       </header>

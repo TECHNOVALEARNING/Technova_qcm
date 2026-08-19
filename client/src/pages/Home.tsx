@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { startLogin } from "@/const";
 import { trpc } from "@/lib/trpc";
-import { ArrowRight, BrainCircuit, Gamepad2, Megaphone, Users } from "lucide-react";
+import { ArrowRight, BrainCircuit, Gamepad2, Megaphone, Users, Settings, LogOut, LogIn } from "lucide-react";
 import { useLocation } from "wouter";
 import { HeroAnimation } from "@/components/HeroAnimation";
 
@@ -43,13 +43,13 @@ export default function Home() {
                 </div>
               </div>
               {user.role === 'admin' && (
-                <button type="button" className="account-link" style={{ color: 'var(--coral)' }} onClick={() => setLocation('/admin')}>Admin</button>
+                <button type="button" className="account-link" style={{ color: 'var(--coral)' }} onClick={() => setLocation('/admin')}><Settings size={15} aria-hidden="true" /> <span className="hide-on-mobile">Admin</span></button>
               )}
-              <button type="button" className="account-link" onClick={handleAction}>Accéder au jeu</button>
-              <button type="button" className="account-link" style={{ opacity: 0.7 }} onClick={() => logout()}>Déconnexion</button>
+              <button type="button" className="account-link" onClick={handleAction}><Gamepad2 size={15} aria-hidden="true" /> <span className="hide-on-mobile">Accéder au jeu</span></button>
+              <button type="button" className="account-link" style={{ opacity: 0.7 }} onClick={() => logout()}><LogOut size={15} aria-hidden="true" /> <span className="hide-on-mobile">Déconnexion</span></button>
             </div>
           ) : (
-            <button type="button" className="account-link" onClick={handleAction}>S'inscrire / Se connecter</button>
+            <button type="button" className="account-link" onClick={handleAction}><LogIn size={15} aria-hidden="true" /> <span className="hide-on-mobile">S'inscrire / Se connecter</span></button>
           )}
         </div>
       </header>

@@ -600,6 +600,7 @@
   .configuration-panel,
   .progress-card,
   .leaderboard-card { border-radius: 20px; }
+  .hide-on-mobile { display: none !important; }
 }
 
 /* Cues de marque et repères Learning Circuit au sein de Prism Glass. */
