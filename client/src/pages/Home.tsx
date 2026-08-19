@@ -160,7 +160,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="ad-action">
-                  <button type="button" className="ad-button" onClick={() => window.open('https://gameearn.com', '_blank')}>
+                  <button type="button" className="ad-button" onClick={() => window.open('https://gameearn-2regxgr3.manus.space', '_blank')}>
                     Voir GAME EARN <ArrowRight size={16} />
                   </button>
                 </div>
