@@ -1,0 +1,22 @@
+# Améliorations en cours — Technova QCM
+
+- [x] Définir et afficher les niveaux de difficulté à partir des données disponibles.
+- [x] Ajouter une saisie libre et contrôlée du nombre de questions par session.
+- [x] Intégrer des animations de bonne réponse et de record personnel.
+- [x] Ajouter des effets sonores activables pour les réponses et les records.
+- [x] Intégrer le partage du score final avec un lien vers Technova Learning.
+- [x] Tester les nouveaux parcours sur ordinateur et mobile.
+- [x] Auditer la répartition, les doublons et les lacunes de la banque actuelle de questions.
+- [x] Constituer une extension fiable jusqu’à 2 000 questions avec sources et thèmes équilibrés.
+- [x] Mettre en place les règles de badges de progression par thème.
+- [x] Ajouter les données et l’interface d’un classement en ligne.
+- [x] Valider les nouveaux parcours communautaires et la qualité des questions.
+- [x] Confirmer la visibilité du badge et du score dans le classement après un parcours OAuth réel sur le site publié (confirmation explicite de l’utilisateur : score et badge visibles).
+- [x] Documenter la limitation de validation OAuth si aucun navigateur authentifié n’est disponible pour le test réel.
+- [x] Définir et appliquer la nouvelle direction visuelle glassmorphique de la landing page.
+- [x] Réduire l’en-tête à une navigation minimaliste et accessible.
+- [x] Recomposer les sections de configuration, badges et classement dans des surfaces translucides épurées.
+- [x] Vérifier la nouvelle landing page sur ordinateur et mobile.
+- [x] Ajouter des états d’erreur explicites pour le classement et la progression.
+- [x] Réaliser un contrôle qualité ciblé des questions ajoutées, notamment les traductions locales.
+- [x] Retirer l’attribution des sources de questions visible dans le pied de page, conformément à l’édition demandée.
