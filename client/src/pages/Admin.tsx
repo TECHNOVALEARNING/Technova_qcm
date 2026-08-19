@@ -42,7 +42,7 @@ export default function Admin() {
 
   const handleLogout = async () => {
     await logout();
-    window.location.reload();
+    window.location.href = "/";
   };
 
   const totalUsers = users?.length || 0;
