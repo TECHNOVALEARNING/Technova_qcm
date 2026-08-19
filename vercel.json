@@ -15,7 +15,7 @@
   ],
   "functions": {
     "api/index.ts": {
-      "includeFiles": "client/src/data/questions.json"
+      "includeFiles": "server/**/*.ts,shared/**/*.ts,drizzle/**/*.ts,client/src/data/questions.json"
     }
   }
 }
