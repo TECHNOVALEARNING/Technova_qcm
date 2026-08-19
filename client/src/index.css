@@ -593,7 +593,7 @@
   .header-status { display: none; }
   .sound-toggle span { display: none; }
   .sound-toggle { width: 33px; justify-content: center; padding: .35rem; }
-  .account-link { max-width: 40px; overflow: hidden; justify-content: center; padding: .35rem .55rem; white-space: nowrap; }
+  .account-link { max-width: none; overflow: visible; justify-content: center; padding: .45rem .85rem; white-space: nowrap; font-size: 0.8rem; }
   .landing-hero { padding-top: 0; }
   .hero-copy h1 { font-size: clamp(3rem, 14vw, 4.25rem); }
   .hero-metrics { border-radius: 15px; }
@@ -846,6 +846,19 @@
 .ad-action { margin: 0; flex-shrink: 0; }
 .ad-button { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.7rem 1.4rem; background: var(--coral); border: none; border-radius: 99px; color: white; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: all 0.2s ease; white-space: nowrap; box-shadow: 0 4px 15px rgba(255, 107, 74, 0.3); }
 .ad-button:hover { background: #ff8066; transform: scale(1.05); }
+
+@media (max-width: 800px) {
+  .ad-container { padding: 1rem 1.5rem; }
+  .ad-content { flex-direction: column; gap: 1rem; text-align: center; }
+  .ad-icon-wrapper { display: none; }
+  .ad-text-content { width: 100%; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+  .ad-action { width: 100%; }
+  .ad-button { width: 100%; justify-content: center; padding: 0.8rem; }
+  .ad-title { font-size: 1.15rem; }
+  .ad-desc { font-size: 0.9rem; }
+  
+  .hero-fullscreen__cta { width: 100%; justify-content: center; padding: 0 1rem !important; }
+}
 
 /* Technova Apps Button Style */
 .technova-apps-btn {
