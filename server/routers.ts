@@ -8,6 +8,7 @@ import { deleteUserAndData, getAllUsers, getLeaderboardEntries, getThemeProgress
 import questionBank from "../client/src/data/questions.json";
 import { badgeForProgress, isNewBadge, scoreSubmittedSession } from "./quiz-utils";
 import bcrypt from "bcryptjs";
+import crypto from "crypto";
 import * as db from "./db";
 import { sdk } from "./_core/sdk";
 
