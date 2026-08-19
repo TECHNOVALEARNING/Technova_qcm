@@ -7,7 +7,7 @@ import { useLocation } from "wouter";
 import { HeroAnimation } from "@/components/HeroAnimation";
 
 export default function Home() {
-  const { isAuthenticated, user, logout } = useAuth();
+  const { isAuthenticated, user, logout, loading } = useAuth();
   const [, setLocation] = useLocation();
   const leaderboardQuery = trpc.quiz.leaderboard.useQuery({ limit: 5 });
   const leaderboardEntries = leaderboardQuery.data || [];
@@ -32,7 +32,9 @@ export default function Home() {
           <span className="brand-wordmark">TECHNOVA<span>QCM</span></span>
         </div>
         <div className="header-tools">
-          {isAuthenticated && user ? (
+          {loading ? (
+            <div style={{ opacity: 0.5, fontSize: '0.8rem' }}>Chargement...</div>
+          ) : isAuthenticated && user ? (
             <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.2rem' }}>
                 <span style={{ fontSize: '0.65rem', fontWeight: 800, color: 'var(--coral)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
