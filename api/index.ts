@@ -7,7 +7,7 @@ import { appRouter } from "../server/routers";
 import { createContext } from "../server/_core/context";
 
 const app = express();
-app.set('trust proxy', 1); // Trust Vercel's proxy for rate limiting
+app.set('trust proxy', 1);
 
 // Body parser
 app.use(express.json({ limit: "1mb" }));
@@ -35,10 +35,4 @@ app.use(
   })
 );
 
-export default async function handler(req: any, res: any) {
-  await new Promise((resolve, reject) => {
-    res.on("finish", resolve);
-    res.on("error", reject);
-    app(req, res);
-  });
-}
+export default app;

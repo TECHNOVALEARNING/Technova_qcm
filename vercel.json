@@ -5,12 +5,16 @@
   "framework": "vite",
   "rewrites": [
     {
+      "source": "/api/(.*)",
+      "destination": "/api"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
   ],
   "functions": {
-    "api/**/*.ts": {
+    "api/index.ts": {
       "includeFiles": "client/src/data/questions.json"
     }
   }
