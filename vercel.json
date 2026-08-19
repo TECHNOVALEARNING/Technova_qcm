@@ -2,17 +2,7 @@
   "version": 2,
   "buildCommand": "npm run build",
   "outputDirectory": "dist/public",
-  "framework": "vite",
-  "functions": {
-    "api-dist/index.js": {
-      "runtime": "@vercel/node@3"
-    }
-  },
   "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api-dist/index.js"
-    },
     {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
