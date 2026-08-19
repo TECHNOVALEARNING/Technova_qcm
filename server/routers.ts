@@ -7,6 +7,9 @@ import { adminProcedure, protectedProcedure, publicProcedure, router } from "./_
 import { deleteUserAndData, getAllUsers, getLeaderboardEntries, getThemeProgressForUser, recordQuizSession, updateUserAdmin } from "./db";
 import questionBank from "../client/src/data/questions.json";
 import { badgeForProgress, isNewBadge, scoreSubmittedSession } from "./quiz-utils";
+import bcrypt from "bcryptjs";
+import * as db from "./db";
+import { sdk } from "./_core/sdk";
 
 type BankQuestion = (typeof questionBank.questions)[number];
 
@@ -45,9 +48,7 @@ export const appRouter = router({
     localLogin: publicProcedure
       .input(z.object({ email: z.string().email(), password: z.string().min(8, "Le mot de passe doit contenir au moins 8 caractères"), name: z.string().optional(), isSignUp: z.boolean() }))
       .mutation(async ({ input, ctx }) => {
-        const bcrypt = await import("bcryptjs");
         let user;
-        const db = await import("./db");
         if (input.isSignUp) {
           user = await db.getUserByEmail(input.email);
           if (user) throw new TRPCError({ code: "CONFLICT", message: "Cet email est déjà utilisé" });
@@ -73,7 +74,6 @@ export const appRouter = router({
           }
         }
         
-        const sdk = (await import("./_core/sdk")).sdk;
         const sessionToken = await sdk.createSessionToken(user!.openId, {
           name: user!.name || "",
           expiresInMs: 31536000000, // 1 year
