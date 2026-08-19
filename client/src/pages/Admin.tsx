@@ -40,9 +40,9 @@ export default function Admin() {
     }
   };
 
-  const handleLogout = async () => {
-    await logout();
-    window.location.href = "/";
+  const handleLogout = () => {
+    setLocation("/");
+    logout();
   };
 
   const totalUsers = users?.length || 0;

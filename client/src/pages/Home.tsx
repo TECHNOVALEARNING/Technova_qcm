@@ -46,7 +46,7 @@ export default function Home() {
                 <button type="button" className="account-link" style={{ color: 'var(--coral)' }} onClick={() => setLocation('/admin')}>Admin</button>
               )}
               <button type="button" className="account-link" onClick={handleAction}>Accéder au jeu</button>
-              <button type="button" className="account-link" style={{ opacity: 0.7 }} onClick={async () => { await logout(); window.location.reload(); }}>Déconnexion</button>
+              <button type="button" className="account-link" style={{ opacity: 0.7 }} onClick={() => logout()}>Déconnexion</button>
             </div>
           ) : (
             <button type="button" className="account-link" onClick={handleAction}>S'inscrire / Se connecter</button>

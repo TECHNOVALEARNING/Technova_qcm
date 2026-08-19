@@ -328,7 +328,7 @@ export default function PlayPage() {
           {isAuthenticated ? (
             <>
               <a className="account-link" href="#progression"><Award size={15} aria-hidden="true" /> {earnedBadges.length} badge{earnedBadges.length > 1 ? "s" : ""}</a>
-              <button type="button" className="account-link" onClick={async () => { await logout(); window.location.href = "/"; }} style={{ marginLeft: '1rem', opacity: 0.8 }}>Déconnexion</button>
+              <button type="button" className="account-link" onClick={() => { setLocation("/"); logout(); }} style={{ marginLeft: '1rem', opacity: 0.8 }}>Déconnexion</button>
             </>
           ) : (
             <button type="button" className="account-link" onClick={() => setLocation("/auth")}><LogIn size={15} aria-hidden="true" /> Se connecter</button>
