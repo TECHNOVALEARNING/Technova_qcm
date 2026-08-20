@@ -19,7 +19,16 @@ export default function Auth() {
       window.location.href = data.role === 'admin' ? "/admin" : "/play";
     },
     onError: (err) => {
-      setError(err.message || "Une erreur est survenue");
+      let msg = err.message || "Une erreur est survenue";
+      try {
+        const parsed = JSON.parse(msg);
+        if (Array.isArray(parsed) && parsed[0]?.message) {
+          msg = parsed[0].message;
+        }
+      } catch (e) {
+        // Not JSON, use the raw string
+      }
+      setError(msg);
     }
   });
 
